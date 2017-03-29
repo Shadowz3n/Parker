@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>Parker</title>
+		<style type="text/css">
+			html,body{background:transparent;width:100%;height:100%;margin:0px;padding:0px}
+			#map_canvas{position:absolute;width:100%;height:100%;z-index:99}
+			#button{position:fixed;top:50%}
+		</style>
+    </head>
+    <body>
+        <div id="map_canvas"></div>
+        <button id="button">Animate em mapa</button>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+        	window.onerror = function(msg, url, linenumber){
+				alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+				return true;
+			}
+        </script>
+        <script type="text/javascript">
+			document.addEventListener("deviceready", function(){
+				
+			});
+			
+			var map;
+			function initMap(){
+				map = new google.maps.Map(document.getElementById('map_canvas'),{
+					center: {lat: -34.397, lng: 150.644},
+					zoom: 8
+				});
+			}
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB-2LaW_780h3sa5wjlUpE7BpObKJ5B64&callback=initMap"></script>
+    </body>
+</html>
