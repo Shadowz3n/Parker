@@ -15,24 +15,24 @@
         <div id="map_canvas"></div>
         <button id="button">Animate em mapa</button>
         <script type="text/javascript" src="cordova.js"></script>
-        <script>
+        <script type="text/javascript">
         	window.onerror = function(msg, url, linenumber){
 				alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
 				return true;
 			}
-        </script>
-        <script type="text/javascript">
-			document.addEventListener("deviceready", function(){
-				
-			});
-			
-			var map;
+        
+        	/* Google maps */
+        	var map;
 			function initMap(){
 				map = new google.maps.Map(document.getElementById('map_canvas'),{
 					center: {lat: -34.397, lng: 150.644},
 					zoom: 8
 				});
 			}
+			
+			document.addEventListener("deviceready", function(){
+				
+			});
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB-2LaW_780h3sa5wjlUpE7BpObKJ5B64&callback=initMap"></script>
     </body>
